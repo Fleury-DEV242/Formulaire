@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 #container-app {
-  background-color: #ffffff;
+  background-color: #363636;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -32,15 +32,22 @@
 form div input {
   width: 100%;
   height: 30px;
-  font-size: 18px;
+  font-size: 15px;
   padding-left: 2px;
-  margin-top: 3px;
   border-radius: 5px;
   border: 1px solid #bcbcbc;
   outline: none;
 }
+form div input[type="text"]{
+  text-transform: capitalize;
+}
+#container-app ::placeholder{
+  font-size: 12px;
+  opacity: 0.6;
+}
 #container-app form button{
-    background-color: #ffffff;
+    background-color: peru;
+    color: #ffffff;
     width: 200px;
     padding: 8px 0px;
     font-size: 18px;
