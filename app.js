@@ -7,6 +7,15 @@ const form = document.querySelector("form");
 
 const userList = [];
 
+const loadFromLocalStorage = () => {
+ const data = localStorage.getItem("userArray");
+ console.log(JSON.parse(data));
+};
+
+const saveToLocalStorage = () => {
+  localStorage.setItem("userArray", JSON.stringify(userList));
+};
+
 function validateForm() {
   if (inputName.value === "" && inputFirstname.value === "") {
     alert("veuillez remplir le(s) champ(s) vide pour créer un compte");
@@ -35,10 +44,9 @@ const createObjectUser = () => {
     return;
   } else {
     userList.push(newUser);
+    saveToLocalStorage();
     form.reset();
   }
-
-  console.log(userList);
 };
 
 const handleForm = (event) => {
@@ -46,5 +54,6 @@ const handleForm = (event) => {
   createObjectUser();
   console.log(event);
 };
-
 form.addEventListener("submit", handleForm);
+loadFromLocalStorage()
+
